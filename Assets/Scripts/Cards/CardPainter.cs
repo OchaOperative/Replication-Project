@@ -8,21 +8,29 @@ public class CardPainter : MonoBehaviour
 {
     [SerializeField] CardColors cardColors;
 
-    public void PaintCard(GameObject card, CardInformation cardInfo)
+    [SerializeField] CardInformation[] infoArray;
+
+    public void PaintCard(GameObject card)
     {
+        CardInformation cardInfo = infoArray[Random.Range(0, infoArray.Length)];
+
         // Set Bottom.
-        card.transform.GetChild(0).GetComponent<Image>().color = CardBottomColor(cardInfo);
+        card.transform.GetChild(2).GetComponent<Image>().color = CardBottomColor(cardInfo);
 
         // Set icon.
-        card.transform.GetChild(1).GetComponent<Image>().sprite = cardInfo.icon;
+        card.transform.GetChild(3).GetComponent<Image>().sprite = cardInfo.icon;
 
         // Set flavour text.
-        card.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = cardInfo.flavourText;
+        card.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = cardInfo.flavourText;
 
         // Set description text.
-        card.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = cardInfo.cardDescription;
+        card.transform.GetChild(5).GetComponent<TextMeshProUGUI>().text = cardInfo.cardDescription;
+
+        // Set name text.
+        card.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = cardInfo.cardName;
     }
 
+    // Color the bottom bar on the card to indicate what type of card it is.
     private Color CardBottomColor(CardInformation cardInfo)
     {
         switch (cardInfo.CardType)

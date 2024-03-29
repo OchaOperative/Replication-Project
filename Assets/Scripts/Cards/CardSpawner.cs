@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class CardSpawner : MonoBehaviour
 {
     [Range(1, 4)]
-    [SerializeField] private int cardAmount;
+    public int cardAmount;
 
     [SerializeField] private GameObject cardPrefab;
 
@@ -14,11 +15,17 @@ public class CardSpawner : MonoBehaviour
 
     private int currentCardAmount;
 
-    private GameObject[] onscreenCards;
+    public GameObject[] onscreenCards;
 
     private CardPainter painter;
 
-    public CardInformation info;
+    public List<GameObject> cards = new List<GameObject>();
+
+
+    private void Awake()
+    {
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +50,13 @@ public class CardSpawner : MonoBehaviour
             currentCardAmount = cardAmount;
 
             SpawnCards();
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
@@ -86,13 +100,13 @@ public class CardSpawner : MonoBehaviour
             if (i == 0 && startIndex == 0)
             {
                 newCard = Instantiate(cardPrefab, gameObject.transform);
-                newCard.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+                newCard.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 
                 // We increment here because we are artificially completing a 'pair' with only one card already.
                 i++;
 
                 // Add all of the correct info.
-                painter.PaintCard(newCard, info);
+                painter.PaintCard(newCard);
 
                 onscreenCards[0] = newCard;
                 arrayIndex++;
@@ -117,13 +131,23 @@ public class CardSpawner : MonoBehaviour
                 onscreenCards[arrayIndex] = newCard;
 
                 // Add all of the correct info.
-                painter.PaintCard(newCard, info);
+                painter.PaintCard(newCard);
 
                 // And all that's left to do is to increment the array index and swap the side we want the next card to spawn on
                 // ready for the next one to spawn.
                 arrayIndex++;
                 leftIndex = !leftIndex;
             }
+
+        }
+
+        // Order the cards descending in the hierarchy from left to right on screen.
+
+        onscreenCards = onscreenCards.OrderBy(c => c.GetComponent<RectTransform>().localPosition.x).ToArray();
+
+        for (int i = 0; i < onscreenCards.Length; i++)
+        {
+            onscreenCards[i].transform.SetSiblingIndex(i);
         }
     }
 }

@@ -18,6 +18,7 @@ public class CardInformation : ScriptableObject
     public Sprite icon;
 
     [Header("Text")]
+    public string cardName;
     public string flavourText;
     public string cardDescription;     
 }
