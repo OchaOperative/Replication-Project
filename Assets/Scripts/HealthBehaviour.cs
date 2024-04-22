@@ -33,16 +33,8 @@ public class HealthBehaviour : MonoBehaviour
 
     public void ApplyHeal(int healAmount)
     {
-        if ((currentHealth += healAmount) > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
-        else
-        {
-            currentHealth += healAmount;
-        }
+        currentHealth = Mathf.Clamp(currentHealth + healAmount, 0, maxHealth);
 
         onHeal(healAmount);
     }
-
 }
