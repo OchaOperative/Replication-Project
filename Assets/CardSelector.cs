@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class CardSelector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public CardInformation cardInfo;
+    public OwnedCardDisplay displayManager;
+    public CardSelectionHandler selectionManager;
+
+    private void Start()
     {
-        
+        displayManager = GameObject.Find("PlayerOwnedCards").GetComponent<OwnedCardDisplay>();
+        selectionManager = GameObject.Find("CardSelector").GetComponent<CardSelectionHandler>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SelectCard()
     {
-        
+        displayManager.AddOwnedCard(cardInfo);
+
+        selectionManager.ClearCards();
     }
 }

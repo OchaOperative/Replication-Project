@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 192026040}
   - component: {fileID: 192026041}
   - component: {fileID: 192026042}
+  - component: {fileID: 192026043}
   m_Layer: 5
   m_Name: CardSelector
   m_TagString: Untagged
@@ -198,6 +199,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dd80c10af5d15dd47b68fd116cadc591, type: 2}
   - {fileID: 11400000, guid: e507135075ccc7f4cbe59fdfb7799e98, type: 2}
   - {fileID: 11400000, guid: eda2db5b85d6c0e419d2c84a844bd036, type: 2}
+--- !u!114 &192026043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192026039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 022c36a7cb679e840ae77eb79948cc3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardInfo: {fileID: 0}
+  displayManager: {fileID: 0}
+  selectionManager: {fileID: 0}
 --- !u!1 &542508511
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +393,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &631873161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 5393215579111688471}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &631873169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631873161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635f1147a62e46044b9289657b178aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &874605735
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +1006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -40, y: -40}
+  m_AnchoredPosition: {x: -66, y: -63}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1700311775
@@ -984,12 +1018,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1700311773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d2da634762e8148a45b0146f275864, type: 3}
+  m_Script: {fileID: 11500000, guid: df3c385b7b28c0a42a884c94c4324ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cardIconPrefab: {fileID: 6559998531128297975, guid: c81751810fd448043bbf484b2815d5d2,
     type: 3}
-  testInfo: {fileID: 11400000, guid: e507135075ccc7f4cbe59fdfb7799e98, type: 2}
+  testInfo: {fileID: 0}
 --- !u!1 &1764214107
 GameObject:
   m_ObjectHideFlags: 0

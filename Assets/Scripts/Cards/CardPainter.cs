@@ -28,6 +28,8 @@ public class CardPainter : MonoBehaviour
 
         // Set name text.
         card.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = cardInfo.cardName;
+
+        card.GetComponent<CardSelector>().cardInfo = cardInfo;
     }
 
     // Color the bottom bar on the card to indicate what type of card it is.

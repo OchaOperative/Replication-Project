@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class CardSpawner : MonoBehaviour
+public class CardSelectionHandler : MonoBehaviour
 {
     [Range(1, 4)]
     public int cardAmount;
@@ -42,10 +42,7 @@ public class CardSpawner : MonoBehaviour
         // If the amount of cards in the inspector changes, rewrite all the cards with the correct amount.
         if (currentCardAmount != cardAmount)
         {
-            foreach (GameObject card in onscreenCards)
-            {
-                Destroy(card);
-            }
+            ClearCards();
 
             currentCardAmount = cardAmount;
 
@@ -148,6 +145,17 @@ public class CardSpawner : MonoBehaviour
         for (int i = 0; i < onscreenCards.Length; i++)
         {
             onscreenCards[i].transform.SetSiblingIndex(i);
+        }
+    }
+
+    /// <summary>
+    /// Removes all cards currently shown on screen.
+    /// </summary>
+    public void ClearCards()
+    {
+        foreach (GameObject card in onscreenCards)
+        {
+            Destroy(card);
         }
     }
 }

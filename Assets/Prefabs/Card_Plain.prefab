@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 2320861666632862516}
   - component: {fileID: 5204684960198752410}
   - component: {fileID: 2141647395789591437}
+  - component: {fileID: 5281570514123754390}
   m_Layer: 5
   m_Name: Card_Plain
   m_TagString: Untagged
@@ -421,10 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8621ce5aaec18e94eabb7dbb88b1a137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  array:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  otherCards: []
 --- !u!114 &5204684960198752410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,7 +466,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 022c36a7cb679e840ae77eb79948cc3c, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2141647395789591437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,6 +548,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5281570514123754390}
+          m_TargetAssemblyTypeName: CardSelector, Assembly-CSharp
+          m_MethodName: SelectCard
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &5281570514123754390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411337597678783115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 022c36a7cb679e840ae77eb79948cc3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8470273929018615006
 GameObject:
   m_ObjectHideFlags: 0
