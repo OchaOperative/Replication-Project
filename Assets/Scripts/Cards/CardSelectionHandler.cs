@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
+/// <summary>
+/// Controls the creation of the card selection screen.
+/// </summary>
 public class CardSelectionHandler : MonoBehaviour
 {
     [Range(1, 4)]

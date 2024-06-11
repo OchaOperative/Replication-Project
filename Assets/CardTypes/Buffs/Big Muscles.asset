@@ -17,3 +17,5 @@ MonoBehaviour:
   cardName: Big muscles
   flavourText: Very cool
   cardDescription: Gain +10 base damage.
+  effectHolder: {fileID: 1342775558166251629, guid: 67f067e28ad5d90459eb51ff1e6f91d6,
+    type: 3}

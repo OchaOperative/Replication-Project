@@ -20,5 +20,8 @@ public class CardInformation : ScriptableObject
     [Header("Text")]
     public string cardName;
     public string flavourText;
-    public string cardDescription;     
+    public string cardDescription;
+
+    [Header("Effects")]
+    public GameObject effectHolder;
 }

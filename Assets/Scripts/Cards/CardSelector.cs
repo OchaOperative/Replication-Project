@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the player selecting the card they want.
+/// </summary>
 public class CardSelector : MonoBehaviour
 {
     public CardInformation cardInfo;
@@ -19,5 +22,10 @@ public class CardSelector : MonoBehaviour
         displayManager.AddOwnedCard(cardInfo);
 
         selectionManager.ClearCards();
+
+        cardInfo.effectHolder.GetComponent<CardEffectsBase>().OnSelectionEffect();
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
